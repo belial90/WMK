@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watermarkino</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Watermarkino</h1>
+    <hr>
+    <h3><span class="step">Step 1</span>Carica le foto originali. Sono consigliate foto orizzontali.</h3>
+    <div id="drop-area">
+        <span style="color: #ffffff90;">Trascina qui le immagini</span>
+        <br>
+        <a id="upload-link" class="link1">Sfoglia</a>
+        <input type="file" id="file-input" multiple>
+    </div>
+    <div id="gallery"></div>
+    <p id="image-counter"></p>
+    <button id="clear-all">Cancella tutte</button>
+    <hr>
+    <h3><span class="step">Step 2</span>Seleziona un watermark</h3>
+    <div id="wm-icon-selection"></div>
+    <input type="hidden" id="watermark-select">
+    <hr>
+
+    <button id="process-images" class="main-button">Avvia</button>
+    <div id="progress-container">
+        <p id="processing-text">Attendi...</p>
+        <progress id="progress-bar" value="0" max="100"></progress>
+    </div>
+    <div style="margin-top:200px; font-size: 12px;opacity: .3;">Version 0.2 – 26 Febbraio 2025</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="script.js"></script>
+</body></html>

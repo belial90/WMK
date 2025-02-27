@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    background-image: url(background-gradient.jpg);
+    background-position: center;
+    background-size: cover;
+    background-color: #171717;
+    color: white;
+    padding: 20px;
+}
+
+h3 {
+    color: #FFFFFF90;
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.step {
+    display: block;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 50px;
+    border: 1px solid #5b3783;
+    width: max-content;
+    margin: auto;
+    color: #946bc2;
+    margin-bottom: 6px;
+}
+
+hr {
+    border: solid 1px #fff;
+    mix-blend-mode: overlay;
+    opacity: .5;
+    max-width: 500px;
+    margin: 30px auto;
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+.main-button {
+    background-color: #ed0a71;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 100px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#drop-area {
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='30' ry='30' stroke='dimgrey' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+    border-radius: 30px;
+    padding: 60px;
+    margin: 20px auto;
+    position: relative;
+    cursor: pointer;
+    background-color: #ffffff05;
+    max-width: 600px;
+    transition: all .2s ease;
+}
+
+#drop-area.drag-over {
+    background-color: #0f0020;
+}
+
+.link1 {
+    text-decoration: none;
+    color: #ed0a71;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 20px;
+    display: block;
+}
+
+#progress-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+
+#progress-bar {
+    margin: 10px auto;
+    width: 80%;
+    height: 8px
+}
+
+progress {
+    border-radius: 10px;
+    background-color: transparent; /* Ensure transparency */
+    border: none;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+}
+
+/* WebKit Browsers (Chrome, Edge, Safari) */
+progress::-webkit-progress-bar {
+    background-color: #ddd !important; /* Background bar color */
+    border-radius: 10px !important;
+}
+
+progress::-webkit-progress-value {
+    background-color: #ed0a71 !important; /* ✅ Green color */
+    border-radius: 10px !important;
+    transition: width 0.2s ease-in-out;
+}
+
+/* Firefox */
+progress::-moz-progress-bar {
+    background-color: #ed0a71 !important; /* ✅ Green color */
+    border-radius: 10px !important;
+    transition: width 0.2s ease-in-out;
+}
+
+/* Edge */
+progress::-ms-fill {
+    background-color: #ed0a71 !important;
+    border-radius: 10px !important;
+}
+
+#file-input {
+    display: none;
+}
+
+#processing-text {
+    display: none;
+    font-weight: bold;
+}
+
+#image-counter {
+    font-size: 0.9rem;
+    color: #555;
+}
+#gallery {
+    max-width: 650px;
+    margin: auto;
+}
+
+#gallery img {
+    width: 60px;
+    margin: 5px;
+    border-radius: 2px;
+}
+
+#wm-icon-selection {
+    display: flex;
+    gap: 20px 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.wm-icon-category-wrapper {
+    width: 300px;
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff05;
+    border-radius: 15px;
+}
+
+.wm-icon-category {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.wm-icon img {
+    max-height: 50px;
+    max-width: 50px;
+}
+
+.wm-icon {
+    cursor: pointer;
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid transparent;
+    display: inline-block;
+    border-radius: 10px;
+    text-align: center;
+    /* Center the text */
+    transition: all .2s ease;
+    width: 60px;
+}
+
+.wm-icon-name {
+    margin-top: 5px;
+    /* Add some space between the icon and the text */
+    font-size: 12px;
+    color: #FFFFFF90;
+}
+
+.wm-icon.selected {
+    border-color: #ed0a71;
+}
+
+#clear-all {
+    font-size: 14px;
+    padding: 5px 10px;
+    background-color: #ffffff10;
+    border-radius: 5px;
+    color: #ffffff90;
+}
