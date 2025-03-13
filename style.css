@@ -1,12 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
+@property --angle {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+:root {
+    --accent-color: #ed0a71;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     text-align: center;
-    background-image: url(background-gradient.jpg);
     background-position: center;
     background-size: cover;
-    background-color: #171717;
+    background-color: #111111;
     color: white;
     padding: 20px;
 }
@@ -23,18 +32,17 @@ h3 {
     font-size: 14px;
     padding: 5px 10px;
     border-radius: 50px;
-    border: 1px solid #5b3783;
+    border: 1px solid #6b43ff;
     width: max-content;
     margin: auto;
-    color: #946bc2;
+    color: #6b43ff;
     margin-bottom: 6px;
 }
 
 hr {
     border: solid 1px #fff;
-    mix-blend-mode: overlay;
-    opacity: .5;
-    max-width: 500px;
+    opacity: .1;
+    max-width: 700px;
     margin: 30px auto;
 }
 
@@ -50,15 +58,17 @@ input[type="reset"] {
     outline: inherit;
 }
 
-.main-button {
-    background-color: #ed0a71;
-    color: white;
-    padding: 10px 25px;
-    border-radius: 100px;
-    font-weight: bold;
-    font-size: 18px;
+@keyframes rotateGradient {
+    from {
+        --angle: 0deg;
+    }
+
+    to {
+        --angle: 360deg;
+    }
 }
 
+/* Drop files area */
 #drop-area {
     background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='30' ry='30' stroke='dimgrey' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
     border-radius: 30px;
@@ -72,18 +82,20 @@ input[type="reset"] {
 }
 
 #drop-area.drag-over {
-    background-color: #0f0020;
+    background-color: #FFFFFF10;
 }
+
 
 .link1 {
     text-decoration: none;
-    color: #ed0a71;
+    color: var(--accent-color);
     font-size: 14px;
     cursor: pointer;
     margin-top: 20px;
     display: block;
 }
 
+/* Progress Bar */
 #progress-container {
     margin-top: 20px;
     display: flex;
@@ -91,7 +103,6 @@ input[type="reset"] {
     align-items: center;
     margin: auto;
 }
-
 
 #progress-bar {
     margin: 10px auto;
@@ -101,37 +112,36 @@ input[type="reset"] {
 
 progress {
     border-radius: 10px;
-    background-color: transparent; /* Ensure transparency */
+    background-color: transparent;
     border: none;
     appearance: none !important;
     -webkit-appearance: none !important;
     -moz-appearance: none !important;
 }
 
-/* WebKit Browsers (Chrome, Edge, Safari) */
 progress::-webkit-progress-bar {
-    background-color: #ddd !important; /* Background bar color */
+    background-color: #ddd !important;
+    /* Background bar color */
     border-radius: 10px !important;
 }
 
 progress::-webkit-progress-value {
-    background-color: #ed0a71 !important; /* ✅ Green color */
+    background-color: var(--accent-color) !important;
     border-radius: 10px !important;
     transition: width 0.2s ease-in-out;
 }
 
-/* Firefox */
 progress::-moz-progress-bar {
-    background-color: #ed0a71 !important; /* ✅ Green color */
+    background-color: var(--accent-color) !important;
     border-radius: 10px !important;
     transition: width 0.2s ease-in-out;
 }
 
-/* Edge */
 progress::-ms-fill {
-    background-color: #ed0a71 !important;
+    background-color: var(--accent-color) !important;
     border-radius: 10px !important;
 }
+
 
 #file-input {
     display: none;
@@ -146,6 +156,7 @@ progress::-ms-fill {
     font-size: 0.9rem;
     color: #555;
 }
+
 #gallery {
     max-width: 650px;
     margin: auto;
@@ -157,6 +168,15 @@ progress::-ms-fill {
     border-radius: 2px;
 }
 
+#clear-all {
+    font-size: 14px;
+    padding: 5px 10px;
+    background-color: #ffffff10;
+    border-radius: 5px;
+    color: #ffffff90;
+}
+
+/* Watermark Selection */
 #wm-icon-selection {
     display: flex;
     gap: 20px 20px;
@@ -165,11 +185,10 @@ progress::-ms-fill {
 }
 
 .wm-icon-category-wrapper {
-    width: 300px;
     text-align: center;
     padding: 20px;
-    background-color: #ffffff05;
-    border-radius: 15px;
+    background-color: #ffffff10;
+    border-radius: 30px;
 }
 
 .wm-icon-category {
@@ -195,6 +214,10 @@ progress::-ms-fill {
     width: 60px;
 }
 
+.wm-icon:hover {
+    background-color: #FFFFFF20;
+}
+
 .wm-icon-name {
     margin-top: 5px;
     /* Add some space between the icon and the text */
@@ -203,13 +226,43 @@ progress::-ms-fill {
 }
 
 .wm-icon.selected {
-    border-color: #ed0a71;
+    background-color: var(--accent-color);
 }
 
-#clear-all {
-    font-size: 14px;
-    padding: 5px 10px;
-    background-color: #ffffff10;
-    border-radius: 5px;
-    color: #ffffff90;
+.main-button {
+    --angle: 0deg;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 100px;
+    font-weight: bold;
+    font-size: 18px;
+    position: relative;
+    font-size: 18px;
+    background: linear-gradient(#d80766, var(--accent-color)) padding-box,
+        linear-gradient(var(--angle), #ed0a71 40%, #ff5fa8 60%, #ed0a71 100%) border-box;
+    border: 1px solid transparent;
+    border-radius: 50em;
+    animation: rotateGradient 4s linear infinite;
+    transition: all .2s ease-out;
+}
+
+.main-button:hover {
+    transform: scale(1.03);
+}
+
+/* Glowing effect */
+.main-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    background: linear-gradient(var(--angle), black 40%, #ff5fa8 60%, black 100%);
+    z-index: 1;
+    filter: blur(20px);
+    mix-blend-mode: screen;
+    opacity: 1;
+    animation: rotateGradient 4s linear infinite;
 }

@@ -1,19 +1,26 @@
 {
-  "Lega Dilettanti": [
-    {
-      "name": "LND",
-      "path": "watermarks/lnd.png",
-      "icon": "watermarks/icon-lnd.png"
+    "Lega Dilettanti": [
+        {
+            "name": "LND",
+            "path": "watermarks/lnd.png",
+            "icon": "watermarks/icon-lnd.png"
     },
-    {
-      "name": "Serie D",
-      "path": "watermarks/seried.png",
-      "icon": "watermarks/icon-seried.png"
+        {
+            "name": "Serie D",
+            "path": "watermarks/seried.png",
+            "icon": "watermarks/icon-seried.png"
     },
-      {
-      "name": "Femminile",
-      "path": "watermarks/femminile.png",
-      "icon": "watermarks/icon-femminile.png"
+        {
+            "name": "Femminile",
+            "path": "watermarks/femminile.png",
+            "icon": "watermarks/icon-femminile.png"
+    }
+  ],
+    "SIU": [
+        {
+            "name": "#SIU25",
+            "path": "watermarks/SIU25.png",
+            "icon": "watermarks/icon-siu.png"
     }
   ]
 }
