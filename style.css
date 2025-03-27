@@ -250,7 +250,7 @@ progress::-ms-fill {
     transform: scale(1.03);
 }
 
-/* Glowing effect */
+/* Glowing effect bugged 
 .main-button::before {
     content: "";
     position: absolute;
@@ -266,3 +266,4 @@ progress::-ms-fill {
     opacity: 1;
     animation: rotateGradient 4s linear infinite;
 }
+*/
